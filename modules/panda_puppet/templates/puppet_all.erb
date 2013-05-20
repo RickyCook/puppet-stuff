@@ -1,4 +1,4 @@
 #!/bin/sh
-for server in <%= $servers.map { |s| "'#{s}'" }.join(' ') %>; do
+for server in <%= @servers.map { |s| "'#{s}'" }.join(' ') %>; do
 	echo puppet --server "$server" "$@"
 done
