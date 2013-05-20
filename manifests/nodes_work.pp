@@ -1,6 +1,6 @@
 node 'sulfurium.trust.abb.ixa.net.au' {
 	class { 'panda_puppet': servers => [
-		'puppet.thatpanda.com'
+		'puppet.thatpanda.com',
 	] }
-	class { 'panda_sublimetext' }
+	class { 'panda_sublimetext': }
 }
