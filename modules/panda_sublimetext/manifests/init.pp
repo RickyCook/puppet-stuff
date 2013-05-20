@@ -5,6 +5,7 @@ class panda_sublimetext {
 	}
 	exec { 'install_puppet':
 		command => "wget -O /tmp/sublime.tar.bz2 $url && tar --overwrite -xjf /tmp/sublime.tar.bz2 -C /opt",
-		unless =>"sh -c 'test -f \"/opt/Sublime Text 2/sublime_text\" && [ `/opt/Sublime\ Text\ 2/sublime_text --version|grep --only-matching \"[0-9]*$\"` -ge 2217 ]'",
+		path => ['/bin', '/usr/bin'],
+		unless => 'test -f "/opt/Sublime Text 2/sublime_text" && [ `/opt/Sublime\ Text\ 2/sublime_text --version|grep --only-matching "[0-9]*$"` -ge 2217 ]',
 	}
 }
